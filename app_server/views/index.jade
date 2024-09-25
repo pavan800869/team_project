@@ -1,0 +1,84 @@
+doctype html
+html
+  head
+    title Home - Hotel Management System
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+  body
+    //- Navigation Bar
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='/')
+        img(src='/images/logo.jpeg', alt='Logo', class='logo')
+        | Hotel Booking
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbarNav
+        ul.navbar-nav.ml-auto
+          li.nav-item.active
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/about/') About
+          li.nav-item
+            a.nav-link(href='/reviews/') Reviews
+          li.nav-item
+            a.nav-link(href='/login/') Login
+          li.nav-item
+            a.nav-link(href='/signup/') Sign Up
+
+    //- Hero Section with Hotel Listings
+    .container.mt-5
+      h1.text-center Welcome to Our Hotel Booking System
+      p.text-center Browse our hotels and book your stay today!
+
+      .row
+        .col-md-4
+          .card.mb-4.shadow-sm
+            img.card-img-top(src='/images/hotel1.jpg', alt='Hotel 1', class='hotel-img')
+            .card-body
+              h5.card-title Hotel Sunshine
+              p.card-text
+                | A luxurious hotel in the heart of the city. 
+                | Enjoy premium amenities and breathtaking views.
+              .d-flex.justify-content-between.align-items-center
+                span.badge.badge-success Rating: 4.5/5
+                a.btn.btn-primary(href='/booking/1') Book Now
+
+        .col-md-4
+          .card.mb-4.shadow-sm
+            img.card-img-top(src='/images/hotel2.jpg', alt='Hotel 2', class='hotel-img')
+            .card-body
+              h5.card-title Hotel Moonlight
+              p.card-text
+                | A cozy retreat offering a peaceful ambiance with 
+                | top-notch services and facilities.
+              .d-flex.justify-content-between.align-items-center
+                span.badge.badge-success Rating: 4.3/5
+                a.btn.btn-primary(href='/booking/2') Book Now
+
+        .col-md-4
+          .card.mb-4.shadow-sm
+            img.card-img-top(src='/images/hotel3.jpg', alt='Hotel 3', class='hotel-img')
+            .card-body
+              h5.card-title Seaside Resort
+              p.card-text
+                | Relax and unwind at our seaside resort, featuring 
+                | beautiful ocean views and excellent hospitality.
+              .d-flex.justify-content-between.align-items-center
+                span.badge.badge-success Rating: 4.7/5
+                a.btn.btn-primary(href='/booking/3') Book Now
+
+    //- Footer Section
+    footer.bg-dark.text-light.mt-5.py-3
+      .container
+        .row
+          .col-md-6
+            p &copy; 2024 Hotel Booking System. All Rights Reserved.
+          .col-md-6.text-right
+            a(href='#', class='text-light') Facebook
+            |  · 
+            a(href='#', class='text-light') Twitter
+            |  · 
+            a(href='#', class='text-light') Instagram

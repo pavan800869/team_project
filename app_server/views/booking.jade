@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  body
+    .container
+      h1.text-center Booking - Hotel #{hotelId}
+      p.text-center Complete the form below to book your stay at Hotel #{hotelId}.
+      form
+        .form-group
+          label(for='name') Name:
+          input.form-control(type='text', id='name', name='name', required=true)
+
+        .form-group
+          label(for='checkin') Check-in Date:
+          input.form-control(type='date', id='checkin', name='checkin', required=true)
+
+        .form-group
+          label(for='checkout') Check-out Date:
+          input.form-control(type='date', id='checkout', name='checkout', required=true)
+
+        .form-group
+          label(for='rooms') Number of Rooms:
+          input.form-control(type='number', id='rooms', name='rooms', required=true, min='1')
+
+        button.btn.btn-primary(type='submit') Confirm Booking
