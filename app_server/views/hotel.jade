@@ -1,9 +1,0 @@
-extends layout
-
-block content
-    h1= hotel.name
-    img(src=hotel.image, alt=hotel.name, style='width:100%; height:auto')
-    p Location: #{hotel.location}
-    p Price: $#{hotel.price}
-    p Rating: #{hotel.rating} ★
-    a.btn.btn-success(href='/booking/' + hotel._id) Book Now

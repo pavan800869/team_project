@@ -1,5 +1,48 @@
+//- about.pug
 extends layout
 
 block content
-    h1 About Us
-    p We offer the best hotel booking services!
+  //- About Us Section
+  .container.mt-5
+    h1.text-center About Our Hotel Booking System
+    p.text-center.mt-3
+      | Our mission is to make hotel bookings a seamless experience. 
+      | We partner with the best hotels worldwide to provide you with 
+      | luxurious stays and impeccable services. Our platform is designed 
+      | to make your booking journey effortless, secure, and enjoyable.
+
+    .row.mt-5
+      .col-md-6
+        img(src='/images/about-us.jpg', alt='About Us', class='img-fluid about-img')
+      .col-md-6
+        h2 Our Vision
+        p
+          | At Hotel Booking, our vision is to be the go-to platform for 
+          | hotel reservations globally. We are committed to offering 
+          | unparalleled customer service and a user-friendly experience.
+        h2 Our Values
+        ul
+          li Reliability
+          li Customer Satisfaction
+          li Secure Bookings
+          li Transparent Pricing
+
+  //- Our Team Section
+  .container.mt-5
+    h2.text-center Our Team
+    .row
+      .col-md-4.text-center
+        img(src='/images/team-member1.jpeg', alt='Team Member 1', class='img-fluid team-img')
+        h5.mt-2 Srihitha
+        p 22EG107B56
+      .col-md-4.text-center
+        img(src='/images/team-member2.jpeg', alt='Team Member 2', class='img-fluid team-img')
+        h5.mt-2 Pavan Kumar
+        p 22EG107B38
+      .col-md-4.text-center
+        img(src='/images/team-member3.jpeg', alt='Team Member 3', class='img-fluid team-img')
+        h5.mt-2 Rohan
+        p 22EG107B21
+
+block scripts
+  script(src='/javascripts/about.js')
