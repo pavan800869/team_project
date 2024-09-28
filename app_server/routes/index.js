@@ -3,16 +3,17 @@ const router = express.Router();
 
 // Home page route
 router.get('/', (req, res) => {
-  res.render('index', { title: 'Home - Hotel Management System' });
+  res.render('index', { title: 'Hotel Management System' });
 });
 router.get('/about', (req, res) => {
-    res.render('about', { title: 'Home - Hotel Management System' });
+    res.render('about', { title: 'Hotel Management System' });
   });
 //booking page
   const hotels = [
     { id: 1, name: "Hotel Sunshine", image: "/images/hotel1.jpg", reviews: ["Amazing stay!", "Excellent service"] },
     { id: 2, name: "Hotel Moonlight", image: "/images/hotel2.jpg", reviews: ["Loved the ambiance!", "Cozy and peaceful"] },
     { id: 3, name: "Seaside Resort", image: "/images/hotel3.jpg", reviews: ["Beautiful views!", "Great hospitality"] },
+    { id: 4, name: "Hotel Trident", image: "/images/hotel4.jpg", reviews: ["Beautiful views!", "Great care"] }
   ];
   
   // Booking route
