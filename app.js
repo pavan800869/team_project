@@ -6,14 +6,14 @@ const session = require('express-session');
 const app = express();
 
 // Set up database
-mongoose.connect('mongodb://localhost:27017/hotelManagement', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// mongoose.connect('mongodb://localhost:27017/hotelManagement', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
   
-mongoose.connection.on('connected', () => {
-    console.log('connected');
-  });
+// mongoose.connection.on('connected', () => {
+//     console.log('connected');
+//   });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
