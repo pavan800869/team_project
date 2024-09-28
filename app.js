@@ -6,14 +6,14 @@ const session = require('express-session');
 const app = express();
 
 // Set up database
-// mongoose.connect('mongodb://localhost:27017/hotelManagement', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// });
+mongoose.connect('mongodb://localhost:27017/hotelManagement', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
   
-// mongoose.connection.on('connected', () => {
-//     console.log('connected');
-//   });
+mongoose.connection.on('connected', () => {
+    console.log('connected');
+  });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,7 +36,7 @@ app.use('/', home);
 app.use('/auth', authRoutes);
 
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 1000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 module.exports = app;
