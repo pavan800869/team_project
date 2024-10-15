@@ -4,9 +4,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
-const dbUri = 'mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement'
+
 // Set up database
-mongoose.connect(dbUri, { 
+mongoose.connect('mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement', { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 })
@@ -37,7 +37,7 @@ app.use('/', hotelRoutes);
 app.use('/auth', authRoutes);
 
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 1000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 module.exports = app;
