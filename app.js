@@ -4,9 +4,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
-
+const dbUri = 'mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement'
 // Set up database
-mongoose.connect('mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement', { 
+mongoose.connect(dbUri, { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 })
