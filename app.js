@@ -6,19 +6,17 @@ const session = require('express-session');
 const app = express();
 
 // Set up database
-mongoose.connect('mongodb://localhost:27017/hotelManagement', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
-  
-mongoose.connection.on('connected', () => {
-    console.log('connected');
-  });
+mongoose.connect('mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement', { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+})
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'yourSecret', resave: false, saveUninitialized: true }));
-
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -29,9 +27,12 @@ app.set('view engine', 'jade');
 
 const authRoutes = require('./app_server/routes/authRoutes');
 
-const home = require('./app_server/routes/index');
+const homeRoutes = require('./app_server/routes/homeRoutes');
+const hotelRoutes = require('./app_server/routes/hotelRoutes');
+const exp = require('constants');
 
-app.use('/', home);
+app.use('/', homeRoutes);
+app.use('/', hotelRoutes);
 
 app.use('/auth', authRoutes);
 
