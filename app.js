@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
 
+const dbUri = process.env.dbUri || 'mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement'
 // Set up database
-mongoose.connect('mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement', { 
+mongoose.connect(dbUri, { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 })
@@ -37,7 +38,6 @@ app.use('/', hotelRoutes);
 app.use('/auth', authRoutes);
 
 
-const PORT = process.env.PORT || 1000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 module.exports = app;
