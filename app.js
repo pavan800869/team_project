@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const dotenv = require('dotenv').config();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const app = express();
 
-const dbUri = process.env.dbUri || 'mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/hotel?retryWrites=true&w=majority&appName=hotelManagement'
+const dbUri = process.env.dbUri;
 // Set up database
 mongoose.connect(dbUri, { 
   useNewUrlParser: true, 
