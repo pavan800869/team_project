@@ -1,0 +1,21 @@
+
+extends layout
+
+block content
+  .container.mt-5
+    h1.text-center Hotel Reviews
+
+    .row
+      each hotel in hotels
+        .col-md-6
+          .card.mb-4.shadow-sm
+            .card-body
+              h3.card-title= hotel.name
+              p.card-text
+                | Rating: #{hotel.rating}/5
+              
+
+              h5 Customer Reviews:
+              ul
+                each review in hotel.reviews
+                  li= review

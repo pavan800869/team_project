@@ -1,4 +1,4 @@
-// controllers/homeController.js
+
 const Hotel = require('../models/hotelModel'); 
 
 
@@ -6,7 +6,7 @@ exports.getHomePage = async (req, res) => {
   try {
 
     const hotels = await Hotel.find({});
-    console.log(hotels);
+    // console.log(hotels);
     res.render('index', { title: 'Hotel Management System', hotels });
   } catch (err) {
     console.error('Error fetching hotels:', err);
@@ -15,9 +15,9 @@ exports.getHomePage = async (req, res) => {
 };
 exports.createHotel = async (req, res) => {
     try {
-        const { _id, name, image, description, rating, reviews } = req.body; // Get the values from req.body
+        const { _id, name, image, description, rating, reviews } = req.body;
 
-        // Validate required fields
+
         if (!_id || !name || !image || !description || !rating) {
             return res.status(400).json({ message: 'All fields are required' });
         }
@@ -31,10 +31,10 @@ exports.createHotel = async (req, res) => {
             reviews
         });
 
-        // Save the hotel to the database
+
         await newHotel.save();
         res.redirect('/');
-        // return res.status(201).json({ message: 'Hotel created successfully', hotel: newHotel });
+
 
     } catch (error) {
         console.error('Error creating hotel:', error);

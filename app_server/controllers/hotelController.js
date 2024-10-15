@@ -1,11 +1,11 @@
-// controllers/hotelController.js
+
 const Hotel = require('../models/hotelModel');
 
-// Controller to handle booking route
+
 exports.getBookingPage = async (req, res) => {
   try {
     const hotelId = req.params.id; 
-    const hotel = await Hotel.findById(hotelId); // Assuming hotels are stored in MongoDB with an ID
+    const hotel = await Hotel.findById(hotelId); 
     
     if (!hotel) {
       return res.status(404).send('Hotel not found');
@@ -19,7 +19,7 @@ exports.getBookingPage = async (req, res) => {
 };
 const Booking = require('../models/bookingModel');
 
-// Function to handle the booking request and save it in the database
+
 exports.createBooking = async (req, res) => {
   const { hotelId } = req.params;
   const { name, checkin, checkout, rooms } = req.body;
@@ -33,9 +33,9 @@ exports.createBooking = async (req, res) => {
       rooms,
     });
 
-    await newBooking.save(); // Save booking to the database
+    await newBooking.save(); 
 
-    res.redirect('/'); // Redirect to home after successful booking
+    res.redirect('/'); 
   } catch (error) {
     console.error('Error creating booking:', error);
     res.status(500).send('An error occurred while processing your booking.');

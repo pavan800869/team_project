@@ -31,9 +31,11 @@ const authRoutes = require('./app_server/routes/authRoutes');
 
 const homeRoutes = require('./app_server/routes/homeRoutes');
 const hotelRoutes = require('./app_server/routes/hotelRoutes');
+const reviewRoutes = require('./app_server/routes/reviewRoutes');
 const exp = require('constants');
 
 app.use('/', homeRoutes);
+app.use('/', reviewRoutes);
 app.use('/', hotelRoutes);
 
 app.use('/auth', authRoutes);
